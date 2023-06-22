@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-define("BASE_URL", "http://localhost/aparcheck/");
+define("BASE_URL", "https://aparcheck.000webhostapp.com/");
 
 function check_login()
 {

@@ -2,5 +2,4 @@
 	session_start();
 
 	session_destroy();
-	header("Location:http://localhost/aparcheck/login.php");
-?>
+	header("Location:https://aparcheck.000webhostapp.com/login.php");

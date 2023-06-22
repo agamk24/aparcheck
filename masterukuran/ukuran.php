@@ -6,7 +6,7 @@ check_login();
 <html>
 
 <head>
-    <title>Master Data Lokasi</title>
+    <title>Master Data Ukuran</title>
     <?php include "../contents/headscript.php"; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -27,8 +27,8 @@ check_login();
             <?php endif; ?>
             <div class="row mb-2">
                 <div class="col align-self-start">
-                    <a href="<?= BASE_URL ?>masterlokasi/lokasi_add.php" class="btn btn-primary mb-3">Tambah
-                        Lokasi</a>
+                    <a href="<?= BASE_URL ?>masterukuran/ukuran_add.php" class="btn btn-primary mb-3">Tambah
+                        Ukuran</a>
                 </div>
                 <div class="col align-self-end">
                     <input class="form-control" type="text" id="kata_kunci" placeholder="Masukan Keyword">
@@ -39,8 +39,8 @@ check_login();
                     <thead>
                         <tr>
                             <td scope="col">#</td>
-                            <td scope="col">ID Lokasi</td>
-                            <td scope="col">Lokasi</td>
+                            <td scope="col">ID Ukuran</td>
+                            <td scope="col">Ukuran</td>
                             <td scope="col">Action</td>
                         </tr>
                     </thead>
@@ -50,7 +50,7 @@ check_login();
 
                         $conn = open_connection();
 
-                        $query = "SELECT * FROM lokasi";
+                        $query = "SELECT * FROM ukuran";
 
                         $hasil = mysqli_query($conn, $query);
 
@@ -59,11 +59,11 @@ check_login();
                         while ($baris = mysqli_fetch_assoc($hasil)) {
                             echo "<tr>";
                             echo "<td>$urut</td>";
-                            echo "<td>$baris[id_lokasi]</td>";
-                            echo "<td>$baris[lokasi]</td>";
+                            echo "<td>$baris[id_ukuran]</td>";
+                            echo "<td>$baris[ukuran]</td>";
                             echo "<td>
-                                     <a class='btn btn-success' href='lokasi_edit.php?id_lokasi=$baris[id_lokasi]' >Ubah</a>
-									<a class='btn btn-danger'  href='lokasi_delete.php?id_lokasi=$baris[id_lokasi]' >Hapus</a>
+                                     <a class='btn btn-success' href='ukuran_edit.php?id_ukuran=$baris[id_ukuran]' >Ubah</a>
+									<a class='btn btn-danger'  href='ukuran_delete.php?id_ukuran=$baris[id_ukuran]' >Hapus</a>
 								</td>";
                             echo "</tr>";
                             $urut++;
@@ -82,7 +82,7 @@ check_login();
             $("#kata_kunci").keyup(function() {
                 var ketikan = this.value
                 $.post(
-                    "cari_lokasi.php", {
+                    "cari_ukuran.php", {
                         kunci: ketikan
                     }
                 ).done(function(data) {
