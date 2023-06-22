@@ -1,0 +1,20 @@
+<?php require_once "../functions.php"; ?>
+<div class="container custom-form container justify-content-center align-items-center" style="width: 500px;">
+	<?php if ($isError == TRUE) : ?>
+
+		<div class="alert alert-danger" role="alert">
+			<?= $error ?>
+		</div>
+
+	<?php endif; ?>
+	<form method="POST">
+		<?php
+		baseTextField($lokasi, "lokasi", "Lokasi");
+		?>
+		<div class="form-group row">
+			<div class="col-sm-10">
+				<button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+			</div>
+		</div>
+	</form>
+</div>
