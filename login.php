@@ -10,28 +10,29 @@ if (isset($_SESSION['nik'])) {
 <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
 <body class="text-center" style="background-color: #4e73df">
-    <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="container justify-content-center align-items-center vh-100 d-flex flex-column">
         <div class="row custom-container">
-            <div class="col-md-6 left-container shadow">
-                <img src="assets/img/logo_tj.png" alt="Logo" class="img-fluid">
-            </div>
-
-            <div class="col-md-6 right-container shadow">
+            <div class="col-md-12">
                 <form class="p-4 custom-form" method="POST">
+                    <div class="mb-3 col-8">
+                        <img src="assets/img/logo_tj.png" alt="Logo" class="img-fluid" width="200" height="200">
+                    </div>
                     <h1 class="h3 mb-3 font-weight-normal">Welcome Back!</h1>
-                    <div class="mb-3 col-8">
-                        <input type="text" class="form-control rounded-pill" id="nik" name="nik" placeholder="NIK">
+                    <div class="mb-3 col-12">
+                        <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
                     </div>
-                    <div class="mb-3 col-8">
-                        <input type="password" class="form-control rounded-pill" name="password" id="password" placeholder="Password">
+                    <div class="mb-3 col-12">
+                        <input type="password" class="form-control" name="password" id="password"
+                            placeholder="Password">
                     </div>
-                    <div class="d-grid gap-2 col-8 mx-auto mb-3">
-                        <button type="submit" class="btn btn-primary rounded-pill">Login</button>
+                    <div class="d-grid gap-2 col-12 mx-auto mb-5">
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
 
                     <?php
@@ -57,7 +58,8 @@ if (isset($_SESSION['nik'])) {
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 </body>
 
