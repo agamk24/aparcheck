@@ -1,6 +1,6 @@
-<?php 
-	require_once "../functions.php";
-	check_login();
+<?php
+require_once "../functions.php";
+check_login();
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,12 +18,12 @@
 
     <main>
         <div class="container">
-            <?php if(isset($_SESSION['pesan_sukses'])) : ?>
+            <?php if (isset($_SESSION['pesan_sukses'])) : ?>
             <div class='alert alert-success' role='alert'>
-                <?php 
-						echo $_SESSION['pesan_sukses'];
-						unset($_SESSION['pesan_sukses']);
-					?>
+                <?php
+                    echo $_SESSION['pesan_sukses'];
+                    unset($_SESSION['pesan_sukses']);
+                    ?>
             </div>
             <?php endif; ?>
             <div class="row mb-2">
@@ -49,41 +49,40 @@
                         </tr>
                     </thead>
                     <tbody id="hasil-pencarian">
-                        <?php 
-							require_once "../koneksi.php";
+                        <?php
+                        require_once "../koneksi.php";
 
-							$conn = open_connection();
+                        $conn = open_connection();
 
-							$query = "SELECT * FROM apar";
+                        $query = "SELECT a.name, a.date_time, a.nomor_apar, a.lokasi, u.ukuran FROM apar a JOIN ukuran u ON a.ukuran = u.id_ukuran";
 
-							$hasil = mysqli_query($conn, $query);
+                        $hasil = mysqli_query($conn, $query);
 
-							$urut = 1;
+                        $urut = 1;
 
-							while($baris = mysqli_fetch_assoc($hasil)){
-								echo "<tr>";
-								echo "<td>$urut</td>";
-								echo "<td>$baris[name]</td>";
-								echo "<td>$baris[date_time]</td>";
-								echo "<td>$baris[nomor_apar]</td>";
-								echo "<td>$baris[lokasi]</td>";
-								echo "<td>$baris[ukuran]</td>";
-								echo "<td>
-									
+                        while ($baris = mysqli_fetch_assoc($hasil)) {
+                            echo "<tr>";
+                            echo "<td>$urut</td>";
+                            echo "<td>$baris[name]</td>";
+                            echo "<td>$baris[date_time]</td>";
+                            echo "<td>$baris[nomor_apar]</td>";
+                            echo "<td>$baris[lokasi]</td>";
+                            echo "<td>$baris[ukuran]</td>";
+                            echo "<td>
+                                     <a class='btn btn-success' href='apar_edit.php?nomor_apar=$baris[nomor_apar]' >Ubah</a>
 									<a class='btn btn-danger'  href='apar_delete.php?nomor_apar=$baris[nomor_apar]' >Hapus</a>
 								</td>";
-                                // <a class='btn btn-success' href='apar_edit.php?npm=$baris[npm]' >Ubah</a>
-								echo "</tr>";
-								$urut++;
-							}
-						?>
+                            echo "</tr>";
+                            $urut++;
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
 
-    <?php include "../contents/footer.php";?>
+    <?php include "../contents/footer.php"; ?>
 
     <script type="text/javascript">
     $(document).ready(function() {

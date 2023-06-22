@@ -1,7 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4e73df;">
-        <a class="navbar-brand mx-3" href="<?= BASE_URL ?>index.php">APAR & P3K
-            Check</a>
+        <a class="navbar-brand mx-3" href="<?= BASE_URL ?>index.php">APAR Check</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

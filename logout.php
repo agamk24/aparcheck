@@ -2,5 +2,5 @@
 	session_start();
 
 	session_destroy();
-	header("Location:http://localhost/belajar-crud/login.php");
+	header("Location:http://localhost/aparcheck/login.php");
 ?>

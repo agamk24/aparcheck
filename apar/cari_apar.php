@@ -21,9 +21,8 @@
 		echo "<td>$baris[ukuran]</td>";
 		echo "<td>
 		<a class='btn btn-danger'  href='apar_delete.php?nomor_apar=$baris[nomor_apar]' >Hapus</a>
+		<a class='btn btn-success' href='apar_edit.php?nomor_apar=$baris[nomor_apar]' >Ubah</a>
 		</td>";
-		// 	<a class='btn btn-success' href='apar_edit.php?nomor_apar=$baris[nomor_apar]' >Ubah</a>
 		echo "</tr>";
 		$urut++;
 	}
-?>

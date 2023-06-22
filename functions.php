@@ -1,83 +1,88 @@
 <?php
-	session_start();
-	
-	define("BASE_URL", "http://localhost/belajar-crud/");
+session_start();
 
-	function check_login(){
-		if(!isset($_SESSION['nik'])){
-			header("Location:" . BASE_URL . "login.php");
-		}
+define("BASE_URL", "http://localhost/aparcheck/");
+
+function check_login()
+{
+	if (!isset($_SESSION['nik'])) {
+		header("Location:" . BASE_URL . "login.php");
+	}
+}
+
+function get_data_jurusan()
+{
+	require_once "koneksi.php";
+
+	$conn = open_connection();
+
+	$query = "SELECT kode, nama_jurusan FROM jurusan";
+
+	$hasil = mysqli_query($conn, $query);
+
+	$list = array();
+
+	while ($row = mysqli_fetch_assoc($hasil)) {
+		$list[$row['kode']] = $row['nama_jurusan'];
 	}
 
-	function get_data_jurusan(){
-		require_once "koneksi.php";
+	return $list;
+}
 
-		$conn = open_connection();
+function get_data_lokasi()
+{
+	require_once "koneksi.php";
 
-		$query = "SELECT kode, nama_jurusan FROM jurusan";
+	$conn = open_connection();
 
-		$hasil = mysqli_query($conn, $query);
+	$query = "SELECT id_lokasi, lokasi FROM lokasi";
 
-		$list = array();
+	$hasil = mysqli_query($conn, $query);
 
-		while($row = mysqli_fetch_assoc($hasil)){
-			$list[ $row['kode'] ] = $row['nama_jurusan'];
-		}	
+	$list = array();
 
-		return $list;
+	while ($row = mysqli_fetch_assoc($hasil)) {
+		$list[$row['id_lokasi']] = $row['lokasi'];
 	}
 
-	function get_data_lokasi(){
-		require_once "koneksi.php";
+	return $list;
+}
 
-		$conn = open_connection();
+function get_data_ukuran()
+{
+	require_once "koneksi.php";
 
-		$query = "SELECT id_lokasi, lokasi FROM lokasi";
+	$conn = open_connection();
 
-		$hasil = mysqli_query($conn, $query);
+	$query = "SELECT * FROM ukuran";
 
-		$list = array();
+	$hasil = mysqli_query($conn, $query);
 
-		while($row = mysqli_fetch_assoc($hasil)){
-			$list[ $row['id_lokasi'] ] = $row['lokasi'];
-		}	
+	$list = array();
 
-		return $list;
+	while ($row = mysqli_fetch_assoc($hasil)) {
+		$list[$row['id_ukuran']] = $row['ukuran'];
 	}
 
-	function get_data_ukuran(){
-		require_once "koneksi.php";
+	return $list;
+}
 
-		$conn = open_connection();
-
-		$query = "SELECT * FROM ukuran";
-
-		$hasil = mysqli_query($conn, $query);
-
-		$list = array();
-
-		while($row = mysqli_fetch_assoc($hasil)){
-			$list[ $row['id_ukuran'] ] = $row['ukuran'];
-		}	
-
-		return $list;
-	}
-
-	function baseRadioButton($value, $name, $title){
-		echo '<fieldset class="form-group">
+function baseRadioButton($value, $name, $title)
+{
+	echo '<fieldset class="form-group">
 				<div class="row align-items-center">
 					<legend class="col-form-label col-sm-4 pt-0">' . $title . ':</legend>
 					<div class="col-sm-10">
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio" name="' . $name . '" value="Ya"'
-								. ($value == 'Ya' ? ' checked' : '') . '>
+		. ($value == '1' ? 'checked' : '') . '>
 							<label class="form-check-label d-flex align-items-center">
 								Ya
 							</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="'. $name . '" value="Tidak"'
-								. ($value == 'Tidak' ? ' checked' : '') . '>
+							<input class="form-check-input" type="radio" name="' . $name . '" value="Tidak"'
+		. ($value == '0' ? 'checked' : '') . '>
 							<label class="form-check-label d-flex align-items-center">
 								Tidak
 							</label>
@@ -85,30 +90,31 @@
 					</div>
 				</div>
 			</fieldset>';
-	}
+}
 
-	function baseTextField($value, $name, $title){
-		echo '
+function baseTextField($value, $name, $title)
+{
+	echo '
 		<div class="mb-3">
 			<label for="' . $name . '" class="form-label">' . $title . ' : </label>
 			<input type="text" class="form-control" id="' . $name . '" name="' . $name . '" value="' . $value . '">
-		</div>';		
-	}
+		</div>';
+}
 
-	function baseTextArea($value, $name, $title){
-		echo '
+function baseTextArea($value, $name, $title)
+{
+	echo '
 		<div class="mb-3">
 			<label for="' . $name . '" class="form-label">' . $title . ' : </label>
 			<textarea class="form-control" id="' . $name . '" name="' . $name . '" rows="3">' . $value . '</textarea>
 		</div>';
-	}
+}
 
-	function baseDatePicker($value, $name, $title){
-		echo '
+function baseDatePicker($value, $name, $title)
+{
+	echo '
 		<div class="mb-3">
 			<label for="' . $name . '" class="form-label">' . $title . ' : </label>
 			<input type="date" class="form-control" id="' . $name . '" name="' . $name . '" value="' . $value . '">
-		</div>';		
-	}
-
-?>
+		</div>';
+}
