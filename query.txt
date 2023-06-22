@@ -1,0 +1,40 @@
+DROP DATABASE IF EXISTS belajar_php;
+CREATE DATABASE belajar_php;
+
+USE belajar_php;
+
+CREATE TABLE mahasiswa(
+	npm CHAR(12) NOT NULL,
+    nama VARCHAR(25),
+    alamat TEXT,
+    tgl_lahir DATE,
+    gender enum('Pria','Wanita'),
+    kode_jurusan CHAR(3),
+    kota VARCHAR(12),
+    PRIMARY KEY(npm)
+) ENGINE=InnoDB;
+
+CREATE TABLE admin(
+	username VARCHAR(30) NOT NULL,
+	password_hash VARCHAR(32),
+    PRIMARY KEY (username)
+) ENGINE=InnoDB;
+
+
+INSERT INTO admin (username, password_hash) VALUES
+('admin@admin.com', MD5('rahasia'));
+
+
+CREATE TABLE jurusan(
+	kode CHAR(3) NOT NULL,
+	nama_jurusan VARCHAR(25),
+	PRIMARY KEY(kode)
+) ENGINE=InnoDB;
+
+INSERT INTO 
+	jurusan
+VALUES
+	('J01', 'Teknik Informatika'),
+	('J02', 'Sistem Informasi'),
+	('J03', 'Sistem Komputer'),
+	('J04', 'Manajemen Informasi');
