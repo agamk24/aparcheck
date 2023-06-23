@@ -24,14 +24,14 @@
 }
 
 body {
-  background-image: url('../img/login_bg.jpg');
+  background-image: url('../img/login_bg.jpeg');
   background-size: cover;
   background-position: center;
 }
 
 body::before {
   content: '';
-  background-image: url('../img/login_bg.jpg');
+  background-image: url('../img/login_bg.jpeg');
   background-size: cover;
   background-position: center;
   position: absolute;

@@ -7,23 +7,27 @@ check_login();
 
 <head>
     <title>Master Data Lokasi</title>
-    <?php include "../contents/headscript.php"; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
 
 <body>
     <?php include "../contents/navbar.php"; ?>
 
-    <main>
+    <main class="my-5">
         <div class="container">
             <?php if (isset($_SESSION['pesan_sukses'])) : ?>
-                <div class='alert alert-success' role='alert'>
-                    <?php
+            <div class='alert alert-success' role='alert'>
+                <?php
                     echo $_SESSION['pesan_sukses'];
                     unset($_SESSION['pesan_sukses']);
                     ?>
-                </div>
+            </div>
             <?php endif; ?>
             <div class="row mb-2">
                 <div class="col align-self-start">
@@ -78,19 +82,19 @@ check_login();
     <?php include "../contents/footer.php"; ?>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $("#kata_kunci").keyup(function() {
-                var ketikan = this.value
-                $.post(
-                    "cari_lokasi.php", {
-                        kunci: ketikan
-                    }
-                ).done(function(data) {
-                    $("#hasil-pencarian").html(data)
-                });
-
+    $(document).ready(function() {
+        $("#kata_kunci").keyup(function() {
+            var ketikan = this.value
+            $.post(
+                "cari_lokasi.php", {
+                    kunci: ketikan
+                }
+            ).done(function(data) {
+                $("#hasil-pencarian").html(data)
             });
+
         });
+    });
     </script>
 </body>
 

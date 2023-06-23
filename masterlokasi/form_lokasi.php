@@ -1,5 +1,5 @@
 <?php require_once "../functions.php"; ?>
-<div class="container custom-form container justify-content-center align-items-center" style="width: 500px;">
+<div class="container custom-form container justify-content-center align-items-center my-5" style="width: 500px;">
 	<?php if ($isError == TRUE) : ?>
 
 		<div class="alert alert-danger" role="alert">
