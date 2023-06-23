@@ -11,8 +11,29 @@
                 <a class="nav-item nav-link" href="<?= BASE_URL ?>apar/apar.php">APAR</a>
                 <a class="nav-item nav-link" href="<?= BASE_URL ?>masterlokasi/lokasi.php">Master Lokasi</a>
                 <a class="nav-item nav-link" href="<?= BASE_URL ?>masterukuran/ukuran.php">Master Ukuran</a>
-                <a class="nav-item nav-link" href="<?= BASE_URL ?>logout.php">Logout</a>
             </div>
         </div>
+        <div class="navbar-nav form-inline mx-3">
+            <a class="nav-link" href="<?= BASE_URL ?>logout.php">
+                <?php
+                require_once('koneksi.php');
+
+                $conn = open_connection();
+
+                $query = "SELECT name FROM user where nik ='$_SESSION[nik]'";
+
+                $hasil = mysqli_query($conn, $query);
+
+                // while ($baris = mysqli_fetch_assoc($hasil)) {
+                //     echo "<tr>";
+                //     echo "<td>$baris[name]</td>";
+                //     echo "</tr>";
+                //     $urut++;
+                // }
+                ?>
+            </a>
+            <a class="nav-link" href="<?= BASE_URL ?>logout.php">Logout</a>
+        </div>
+
     </nav>
 </header>
