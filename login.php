@@ -17,13 +17,12 @@ if (isset($_SESSION['nik'])) {
 
 <body class="text-center" style="background-color: #4e73df">
     <div class="container justify-content-center align-items-center vh-100 d-flex flex-column">
-        <div class="row custom-container">
-            <div class="col-md-12">
+        <div class="row custom-container col-md-3">
+            <div class="col-lg-12">
                 <form class="p-4 custom-form" method="POST">
-                    <div class="mb-3 col-8">
+                    <div class="mb-3 col-6">
                         <img src="assets/img/logo_tj.png" alt="Logo" class="img-fluid" width="200" height="200">
                     </div>
-                    <h1 class="h3 mb-3 font-weight-normal">Welcome Back!</h1>
                     <div class="mb-3 col-12">
                         <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
                     </div>
@@ -54,6 +53,7 @@ if (isset($_SESSION['nik'])) {
                         }
                     }
                     ?>
+                    <span class="text-muted">Copyright © Apar Check 2023</span>
                 </form>
             </div>
         </div>
