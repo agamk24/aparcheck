@@ -1,23 +1,23 @@
 <?php require_once "../functions.php"; ?>
 <div class="container custom-form container justify-content-center align-items-center my-5" style="width: 500px;">
-	<?php if ($isError == TRUE) : ?>
+    <?php if ($isError == TRUE) : ?>
 
-		<div class="alert alert-danger" role="alert">
-			<?= $error ?>
-		</div>
+    <div class="alert alert-danger" role="alert">
+        <?= $error ?>
+    </div>
 
-	<?php endif; ?>
-	<form method="POST">
-		<?php
+    <?php endif; ?>
+    <form method="POST">
+        <?php
 		baseTextField($name, "name", "Nama Pemeriksa");
 		baseDatePicker($date_time, "date_time", "Tanggal Pemeriksaan");
 		baseTextField($nomor_apar, "nomor_apar", "Nomor APAR");
 		?>
-		<div class="mb-3">
-			<label for="lokasi" class="form-label">Lokasi : </label>
-			<select class="form-control" id="lokasi" name="lokasi">
-				<option value="">--Pilih Lokasi--</option>
-				<?php
+        <div class="mb-3">
+            <label for="lokasi" class="form-label">Lokasi : </label>
+            <select class="form-control" id="lokasi" name="lokasi">
+                <option value="">--Pilih Lokasi--</option>
+                <?php
 				if (count($list_lokasi) > 0) {
 					foreach ($list_lokasi as $id_lokasi => $nama_lokasi) {
 						$terpilih = '';
@@ -28,13 +28,13 @@
 					}
 				}
 				?>
-			</select>
-		</div>
-		<div class="mb-3">
-			<label for="ukuran" class="form-label">Ukuran : </label>
-			<select class="form-control" id="ukuran" name="ukuran">
-				<option value="">--Pilih Ukuran--</option>
-				<?php
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="ukuran" class="form-label">Ukuran : </label>
+            <select class="form-control" id="ukuran" name="ukuran">
+                <option value="">--Pilih Ukuran--</option>
+                <?php
 				if (count($list_ukuran) > 0) {
 					foreach ($list_ukuran as $id_ukuran => $nama_ukuran) {
 						$terpilih = '';
@@ -45,10 +45,10 @@
 					}
 				}
 				?>
-			</select>
-		</div>
-		<?php
-		baseRadioButton($masa_berlaku, "masa_berlaku", "Masa Berlaku");
+            </select>
+        </div>
+        <?php
+		baseRadioButtonSesuaiTidak($masa_berlaku, "masa_berlaku", "Masa Berlaku");
 		baseRadioButton($pin, "pin", "PIN");
 		baseRadioButton($tabung, "tabung", "Tabung");
 		baseRadioButton($nozzle, "nozzle", "Nozzle");
@@ -57,10 +57,10 @@
 		baseRadioButton($kotak_apar, "kotak_apar", "Kotak Apar");
 		baseTextArea($keterangan, "keterangan", "Keterangan");
 		?>
-		<div class="form-group row">
-			<div class="col-sm-10">
-				<button type="submit" name="submit" class="btn btn-primary">Simpan</button>
-			</div>
-		</div>
-	</form>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </form>
 </div>
