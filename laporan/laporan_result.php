@@ -67,41 +67,55 @@ check_login();
 
                         $conn = open_connection();
 
-                        $param_nomor_apar = $_GET['nomor_apar'];
+                        $periode = $_GET['periode'];
 
-                        $query = "SELECT * FROM apar a JOIN ukuran u ON a.ukuran = u.id_ukuran where a.nomor_apar='$param_nomor_apar'";
+                        $query = "SELECT * FROM apar WHERE ";
+
+                        if ($periode === "1") {
+                            $bulan = $_GET['bulan'];
+                            $resultBulan = substr($bulan, 0, 2);
+                            $resultTahun = substr($bulan, 3, 5);
+                            $query .= "MONTH(date_time) = $resultBulan AND YEAR(date_time) = $resultTahun";
+                        } else if ($periode === "2") {
+                            $tahun = $_GET['tahun'];
+                            $query .= "YEAR(date_time) = $tahun";
+                        }
 
                         $hasil = mysqli_query($conn, $query);
 
                         $urut = 1;
+                        if (mysqli_fetch_assoc($hasil)) {
+                            while ($baris = mysqli_fetch_assoc($hasil)) {
+                                $masa_berlaku_value = $baris["masa_berlaku"] == "1" ? 'Sesuai' : "Tidak Sesuai";
+                                $pin_value = $baris["pin"] == "1" ? "Ya" : "Tidak";
+                                $tabung_value = $baris["tabung"] == "1" ? "Ya" : "Tidak";
+                                $nozzle_value = $baris["nozzle"] == "1" ? "Ya" : "Tidak";
+                                $selang_value = $baris["selang"] == "1" ? "Ya" : "Tidak";
+                                $tekanan_value = $baris["tekanan"] == "1" ? "Ya" : "Tidak";
+                                $kotak_apar_value = $baris["kotak_apar"] == "1" ? "Ya" : "Tidak";
 
-                        while ($baris = mysqli_fetch_assoc($hasil)) {
-
-                            $masa_berlaku_value = $baris["masa_berlaku"] == "1" ? 'Sesuai' : "Tidak Sesuai";
-                            $pin_value = $baris["pin"] == "1" ? "Ya" : "Tidak";
-                            $tabung_value = $baris["tabung"] == "1" ? "Ya" : "Tidak";
-                            $nozzle_value = $baris["nozzle"] == "1" ? "Ya" : "Tidak";
-                            $selang_value = $baris["selang"] == "1" ? "Ya" : "Tidak";
-                            $tekanan_value = $baris["tekanan"] == "1" ? "Ya" : "Tidak";
-                            $kotak_apar_value = $baris["kotak_apar"] == "1" ? "Ya" : "Tidak";
-
+                                echo "<tr>";
+                                echo "<td>$urut</td>";
+                                echo "<td>$baris[name]</td>";
+                                echo "<td>$baris[date_time]</td>";
+                                echo "<td>$baris[nomor_apar]</td>";
+                                echo "<td>$baris[lokasi]</td>";
+                                echo "<td>$baris[ukuran]</td>";
+                                echo "<td>$masa_berlaku_value</td>";
+                                echo "<td>$pin_value</td>";
+                                echo "<td>$tabung_value</td>";
+                                echo "<td>$nozzle_value</td>";
+                                echo "<td>$selang_value</td>";
+                                echo "<td>$tekanan_value</td>";
+                                echo "<td>$kotak_apar_value</td>";
+                                echo "<td>$baris[keterangan]</td>";
+                                echo "</tr>";
+                                $urut++;
+                            }
+                        } else {
                             echo "<tr>";
-                            echo "<td>$urut</td>";
-                            echo "<td>$baris[name]</td>";
-                            echo "<td>$baris[date_time]</td>";
-                            echo "<td>$baris[nomor_apar]</td>";
-                            echo "<td>$baris[lokasi]</td>";
-                            echo "<td>$baris[ukuran]</td>";
-                            echo "<td>$masa_berlaku_value</td>";
-                            echo "<td>$pin_value</td>";
-                            echo "<td>$tabung_value</td>";
-                            echo "<td>$nozzle_value</td>";
-                            echo "<td>$selang_value</td>";
-                            echo "<td>$tekanan_value</td>";
-                            echo "<td>$kotak_apar_value</td>";
-                            echo "<td>$baris[keterangan]</td>";
+                            echo "<td colspan= 14 align=center>Tidak Ada Data.</td>";
                             echo "</tr>";
-                            $urut++;
                         }
                         ?>
                     </tbody>

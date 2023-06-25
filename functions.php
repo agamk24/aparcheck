@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-define("BASE_URL", "https://aparcheck.000webhostapp.com/");
-// define("BASE_URL", "http://localhost/aparcheck/");
+// define("BASE_URL", "https://aparcheck.000webhostapp.com/");
+define("BASE_URL", "http://localhost/aparcheck/");
 
 function check_login()
 {
@@ -86,6 +86,31 @@ function baseRadioButton($value, $name, $title)
 		. ($value == '0' ? 'checked' : '') . '>
 							<label class="form-check-label d-flex align-items-center">
 								Tidak
+							</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>';
+}
+
+function baseRadioButtonSesuaiTidak($value, $name, $title)
+{
+	echo '<fieldset class="form-group">
+				<div class="row align-items-center">
+					<legend class="col-form-label col-sm-4 pt-0">' . $title . ':</legend>
+					<div class="col-sm-10">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="' . $name . '" value="Sesuai"'
+		. ($value == '1' ? 'checked' : '') . '>
+							<label class="form-check-label d-flex align-items-center">
+								Sesuai
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="' . $name . '" value="Tidak Sesuai"'
+		. ($value == '0' ? 'checked' : '') . '>
+							<label class="form-check-label d-flex align-items-center">
+								Tidak Sesuai
 							</label>
 						</div>
 					</div>

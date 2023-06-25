@@ -21,6 +21,9 @@
             <li class="nav-item">
                 <a class="nav-item nav-link" href="<?= BASE_URL ?>about-us.php">About Us</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="<?= BASE_URL ?>laporan/laporan.php">Laporan</a>
+            </li>
             <li>
                 <a class="nav-item nav-link" href="<?= BASE_URL ?>logout.php">Logout</a>
             </li>
