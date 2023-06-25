@@ -34,7 +34,10 @@ check_login();
                                             <div class="card-body">
                                                 <h5 class="card-title">Muhammad Agam Kurniawan | 202043500619</h5>
                                                 <p class="card-text">Kontribusi : </p>
-                                                <p class="card-text"> - Login, Homepage, Apar, Masterdata, About us</p>
+                                                <p class="card-text"> - Login, Logout & Homepage</p>
+                                                <p class="card-text"> - User</p>
+                                                <p class="card-text"> - Database</p>
+                                                <p class="card-text"> - About Us</p>
                                             </div>
                                         </div>
                                     </div>
@@ -50,7 +53,8 @@ check_login();
                                             <div class="card-body">
                                                 <h5 class="card-title">Diki Permana Putra | 202043500643</h5>
                                                 <p class="card-text">Kontribusi : </p>
-                                                <p class="card-text"></p>
+                                                <p class="card-text"> - Apar</p>
+                                                <p class="card-text"> - Donatur</p>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +70,8 @@ check_login();
                                             <div class="card-body">
                                                 <h5 class="card-title">Malik Abdul Azis | 202043500656</h5>
                                                 <p class="card-text">Kontribusi : </p>
-                                                <p class="card-text"></p>
+                                                <p class="card-text"> - Masterdata Lokasi</p>
+                                                <p class="card-text"> - Donatur</p>
                                             </div>
                                         </div>
                                     </div>
@@ -82,7 +87,8 @@ check_login();
                                             <div class="card-body">
                                                 <h5 class="card-title">Muhamad Irfan | 202043500703</h5>
                                                 <p class="card-text">Kontribusi : </p>
-                                                <p class="card-text"></p>
+                                                <p class="card-text"> - Masterdata Ukuran</p>
+                                                <p class="card-text"> - Donatur</p>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +104,8 @@ check_login();
                                             <div class="card-body">
                                                 <h5 class="card-title">Ali Al Husaini | 202043502491</h5>
                                                 <p class="card-text">Kontribusi : </p>
-                                                <p class="card-text"></p>
+                                                <p class="card-text"> - Laporan</p>
+                                                <p class="card-text"> - Donatur</p>
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +121,8 @@ check_login();
                                             <div class="card-body">
                                                 <h5 class="card-title">Zuhriatin Solihah | 202043502495</h5>
                                                 <p class="card-text">Kontribusi : </p>
-                                                <p class="card-text"></p>
+                                                <p class="card-text"> - Design</p>
+                                                <p class="card-text"> - Donatur</p>
                                             </div>
                                         </div>
                                     </div>
@@ -130,7 +138,8 @@ check_login();
                                             <div class="card-body">
                                                 <h5 class="card-title">Lizuanda Mellya Audria | 202043500697</h5>
                                                 <p class="card-text">Kontribusi : </p>
-                                                <p class="card-text"></p>
+                                                <p class="card-text"> - User</p>
+                                                <p class="card-text"> - Donatur</p>
                                             </div>
                                         </div>
                                     </div>
