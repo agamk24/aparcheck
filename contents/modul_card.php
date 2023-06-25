@@ -1,6 +1,6 @@
-<div class="container my-3">
-    <div class="row">
-        <div class="col">
+<div class="container">
+    <div class="row row-cols-3">
+        <div class="col my-3">
             <div class="card" style="width: 18rem;">
                 <img src="assets/img/apar.png" class="card-img-top my-3">
                 <div class="card-body">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col my-3">
             <div class="card" style="width: 18rem;">
                 <img src="assets/img/loc.png" class="card-img-top my-3">
                 <div class="card-body">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col my-3">
             <div class="card" style="width: 18rem;">
                 <img src="assets/img/ukuran.png" class="card-img-top my-3">
                 <div class="card-body">
@@ -30,7 +30,27 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col my-3">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/img/document.png" class="card-img-top my-3">
+                <div class="card-body">
+                    <h5 class="card-title">Laporan</h5>
+                    <p class="card-text">Cetak Laporan</p>
+                    <a href="laporan/laporan.php" class="btn btn-primary">Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col my-3">
+            <div class="card" style="width: 18rem;">
+                <img src="assets/img/add_user.png" class="card-img-top my-3">
+                <div class="card-body">
+                    <h5 class="card-title">User</h5>
+                    <p class="card-text">Tambahkan data User</p>
+                    <a href="user/user.php" class="btn btn-primary">Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col my-3">
             <div class="card" style="width: 18rem;">
                 <img src="assets/img/user.png" class="card-img-top my-3">
                 <div class="card-body">
