@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #4e73df;">
     <a class="navbar-brand mx-3" href="<?= BASE_URL ?>index.php">
-        <img class="bi" height="25" style="filter: brightness(0) saturate(100%) invert(100%);" src="<?= BASE_URL ?>assets/img/tj.png">
+        <img class="bi" height="25" style="filter: brightness(0) saturate(100%) invert(100%);"
+            src="<?= BASE_URL ?>assets/img/tj.png">
     </a>
     <div class="container-fluid">
         <ul class="navbar-nav">
@@ -19,10 +20,13 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link" href="<?= BASE_URL ?>about-us.php">About Us</a>
+                <a class="nav-item nav-link" href="<?= BASE_URL ?>laporan/laporan.php">Laporan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link" href="<?= BASE_URL ?>laporan/laporan.php">Laporan</a>
+                <a class="nav-item nav-link" href="<?= BASE_URL ?>user/user.php">User</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="<?= BASE_URL ?>about-us.php">About Us</a>
             </li>
             <li>
                 <a class="nav-item nav-link" href="<?= BASE_URL ?>logout.php">Logout</a>
